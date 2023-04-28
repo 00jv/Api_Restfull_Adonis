@@ -9,7 +9,7 @@ export default class Comment extends BaseModel {
   public username: string
 
   @column()
-  public momentID: number
+  public momentId: number
 
   @column()
   public text: string

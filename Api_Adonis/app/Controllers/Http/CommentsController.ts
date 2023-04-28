@@ -5,17 +5,17 @@ import Moment from 'App/Models/Moment'
 export default class CommentsController {
   public async store({ params, request, response }: HttpContextContract) {
     const body = request.body()
-    const { momentID } = params
+    const { momentId } = params
 
-    console.log(momentID)
+    console.log(momentId)
 
-    if (momentID === undefined) {
+    if (momentId === undefined) {
       throw new Error('Id undefined')
     }
 
-    await Moment.findOrFail(momentID)
+    await Moment.findOrFail(momentId)
 
-    body.momentID = momentID
+    body.momentId = momentId
 
     const comment = await Comment.create(body)
 
